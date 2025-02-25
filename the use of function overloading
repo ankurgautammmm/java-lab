@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter two integers for the first addition: ");
+        int A = scanner.nextInt();
+        int B = scanner.nextInt();
+
+        Sum Obj = new Sum();
+        int intResult = Obj.Addition(A, B);
+        System.out.println("Sum of " + A + " and " + B + ": " + intResult);
+        System.out.print("Enter two doubles for the second addition: ");
+        double C = scanner.nextDouble();
+        double D = scanner.nextDouble();
+        double doubleResult = Obj.Addition(C, D);
+        System.out.println("Sum of " + C + " and " + D + ": " + doubleResult);
+        scanner.close();
+    }
+}
+
+class Sum {
+    public int Addition(int Num1, int Num2) {
+        int Result = Num1 + Num2;
+        return Result;
+    }
+    public double Addition(double Num1, double Num2) {
+        double Result = Num1 + Num2;
+        return Result;
+    }
+}
