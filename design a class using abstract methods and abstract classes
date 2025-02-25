@@ -1,0 +1,30 @@
+import java.util.Scanner; 
+class Main {
+    public static void main(String args[]) { 
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of gears: "); 
+        int gears = scanner.nextInt();
+        scanner.close();
+        Honda myBike = new Honda();
+        myBike.changeGear(gears);
+        myBike.run();
+    }
+}
+
+abstract class Bike {
+    int gears; 
+    public Bike() {
+        System.out.println("Bike is created");
+    }
+    abstract void run();
+    public void changeGear(int gears) {
+        this.gears = gears;
+        System.out.println("Gear changed to " + gears);
+    }
+}
+
+class Honda extends Bike {
+    void run() {
+        System.out.println("Running safely..");
+    }
+}
