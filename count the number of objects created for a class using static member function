@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String args[]) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of employees: ");
+        int numOfEmployees = scanner.nextInt();
+        scanner.nextLine(); 
+        System.out.println("Enter employee details:");
+        Employee[] Obj = new Employee[numOfEmployees];
+        for (int i = 0; i < numOfEmployees; i++) {
+            Obj[i] = new Employee();
+            Obj[i].GetDetails(i + 1, scanner); 
+        }
+        System.out.println("There are " + Employee.getObjectCount() + " objects in this class.");
+        scanner.close();
+    }
+}
+class Employee {
+    String EmployeeName;
+    int Salary;
+    public static int objectCount = 0;
+
+    public Employee() {
+        objectCount++;
+    }
+
+    public static int getObjectCount() {
+        return objectCount;
+    }
+    public void GetDetails(int Num, Scanner scanner) {
+        System.out.print("Enter name of employee " + Num + ": ");
+        EmployeeName = scanner.nextLine();
+        System.out.print("Enter salary of employee " + Num + ": ");
+        Salary = scanner.nextInt();
+        scanner.nextLine();  
+    }
+}
