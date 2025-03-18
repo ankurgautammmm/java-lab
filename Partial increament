@@ -1,0 +1,32 @@
+ public class Main {
+    public static void main(String[] args) { 
+        Dog d = new Dog();
+        Cat c = new Cat();
+        d.eat();
+        d.sleep();
+        c.eat();
+        c.sleep();
+    }
+}
+interface Animal {
+    void eat(); 
+    void sleep();
+}
+
+class Dog implements Animal { 
+    public void eat() {
+        System.out.println("Dog is eating");
+    }
+    public void sleep() {
+        System.out.println("Dog is sleeping");
+    }
+}
+
+class Cat implements Animal { 
+    public void eat() {
+        System.out.println("Cat is eating");
+    }
+    public void sleep() {
+        System.out.println("Cat is sleeping");
+    }
+}
