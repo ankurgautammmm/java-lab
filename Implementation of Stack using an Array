@@ -1,0 +1,32 @@
+#include <stdio.h>
+#define size 10
+int top = -1; 
+int stack[10];
+void display_stack() {
+    if (top == -1) {
+        printf("Stack is empty.\n");
+    } else {
+        printf("Current Stack: ");
+        for (int t = 0; t <= top; t++) {
+            printf("%d ", stack[t]);
+        }
+ printf("\n");
+    }
+}
+int main() {
+    int n, element;
+    printf("Enter the number of elements to add to the stack: ");
+    scanf("%d", &n);
+    for (int t = 0; t < n; t++) {
+        printf("Enter element %d: ", t + 1);
+        scanf("%d", &element);
+   if (top < size - 1) {
+        stack[++top] = element;  
+        } else {
+ printf("Stack overflow. Cannot add more elements.\n");
+  break;
+        }
+    }
+display_stack();
+return 0;
+}
